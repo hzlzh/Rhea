@@ -12,127 +12,91 @@
   <link href="css/style.css" media="all" type="text/css" rel="stylesheet" />
   <script src="js/jquery-1.7.2.min.js"></script>
   <script src="js/modernizr.js"></script>
+  <style type="text/css">
+    #main{
+    margin: 42px auto 0;
+    position: relative;
+    z-index: 9;
+    width: 990px;
+    overflow: hidden;
+    }
+  </style>
 </head>
 <body class="feedback">
   <div class="box">
     <div id="main" role="main" class="container">
       <!-- Start here -->
-      <div class="fbk-content">
+      <div id="fbk-content" class="fbk-content">
         <header class="fbk-title">
           <h1>用户反馈</h1>
           <div class="fbk-sort">
-            <a href="#">
-              <span>最新反馈</span>
-            </a>
-            |
-            <a href="#">
-              <span>热门反馈</span>
+            <a data-option-id="0" class="checked" href="#latest">
+              最新反馈
+            </a> <i>|</i>
+            <a data-option-id="1" href="#supported">
+              热门反馈
             </a>
           </div>
         </header>
         <nav class="fbk-type">
           <ul>
             <li>
-              <a href="#">
-                <span>全部</span>
+              <a class="checked" data-option-id="0" href="#all-list">
+                全部
               </a>
             </li>
             <li>
-              <a href="#">
-                <span>已采纳</span>
+              <a data-option-id="1" href="#opened-list">
+                已采纳
               </a>
             </li>
             <li>
-              <a href="#">
-                <span>已解决</span>
+              <a data-option-id="2" href="#closed-list">
+                已解决
               </a>
             </li>
           </ul>
         </nav>
         <ul class="fbk-list-body">
-          <li class="fbk-list-item">
-            <div class="support-box">
-              <div class="support-num">
-                <a href="#">
-                  <span>64</span>
-                </a>
-              </div>
-              <a href="" class="support-text">支持</a>
-            </div>
-            <div class="fbk-list-box">
-              <div class="fbk-list-content"></div>
-              <div class="fbk-list-author">
-                用户
-                <span class="name">sam</span>
-                发表于
-                <span class="date">2012.08.02</span>
-                <span class="state">已解决</span>
-              </div>
-              <ul class="fbk-list-reply">
-                <li>
-                  <div class="fbk-reply-content">
-                    我的账号应该是johdan，我注册成了jodhan，希望能帮我改一不知道你是怎么设置反正我的 Q正常版本，从来没有出现过奥运相关的弹窗...
-                  </div>
-                  <div class="fbk-reply-author">
-                    <span class="name">管理员</span>
-                    回复于
-                    <span class="date">2012.08.02</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="fbk-reply-content">
-                    我的账号应该是johdan，我注册成了jodhan，希望能帮我改一不知道你是怎么设置反正我的 Q正常版本，从来没有出现过奥运相关的弹窗...
-                  </div>
-                  <div class="fbk-reply-author">
-                    <span class="name">管理员</span>
-                    回复于
-                    <span class="date">2012.08.02</span>
-                  </div>
-                </li>
-                <li></li>
-              </ul>
-            </div>
-          </li>
-          <li class="fbk-list-item"></li>
-          <li class="fbk-list-item"></li>
+          
         </ul>
         <nav class="fbk-pagination">
-          <a href="" class="prev">
-            <span>上一页</span>
+          <a data-option-id="0" href="#prev" class="pagination prev">
+            <
           </a>
-          <span class="curent-page">1</span>
-          / 共有
-          <span class="total-page">3</span>
-          页
-          <a href="" class="next">
-            <span>下一页</span>
+          <span class="pagination curent-page">1</span>
+          / 共<span data-option-id="1" class="total-page">1</span>页
+          <a data-option-id="1" href="#next" class="pagination next">
+            >
           </a>
         </nav>
       </div>
-      <div class="fbk-reply-box">
+      <div id="fbk-reply-box" class="fbk-reply-box">
         <h2>发表反馈</h2>
         <form class="fbk-form">
           <textarea name="content" cols="30" rows="10" placeholder="请输入您的反馈。" ></textarea>
-          <input type="text" name="url" autocomplete="off" class="name" placeholder="出错页面链接">
-          <input type="text" name="email" autocomplete="off" class="name" placeholder="邮箱">
-          <input type="text" name="name" autocomplete="off" class="name" placeholder="姓名（选填）">
-          <input type="text" name="mobile" autocomplete="off" class="name" placeholder="手机（选填）">
+          <input type="text" name="url" autocomplete="off" placeholder="出错页面链接">      
+          <input type="text" name="email" autocomplete="off" placeholder="邮箱">      
+          <input type="text" name="name" autocomplete="off" placeholder="姓名（选填）">      
+          <input type="text" name="mobile" autocomplete="off" placeholder="手机（选填）">      
           <label>
             <input type="checkbox" name="is_agree">我愿意接受关于此反馈的进一步联系、回访</label>
-          <input type="hidden" name="captcha" value="">
-          <input type="submit" value="发表反馈"></form>
+          <input type="hidden" name="captcha" value="">   
+          <div class="message"></div>   
+          <input type="submit" name="submit" value="发表反馈"></form>
         <div class="fbk-contact">
           <h3>您可以通过如下方式联系管理员：</h3>
           <p>
             电话：010-85711956
-            <br />
-            邮箱：
-            <a href="mailto:pm@geekpark.net?subject=关于极客公园的用户反馈">pm@geekpark.net</a>
+            <br />      
+            邮箱：<a href="mailto:pm@geekpark.net?subject=关于极客公园的用户反馈">pm@geekpark.net</a>
           </p>
         </div>
       </div>
-      <!-- End here --> </div>
+      <!-- End here -->
+    </div>
   </div>
+  <script src="js/plugin.js"></script>
   <script src="js/script-feedback.js"></script>
 </body>
 </html>
