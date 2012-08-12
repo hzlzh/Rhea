@@ -1,4 +1,5 @@
-Rhea
+Rhea v0.3
 =========
 
-### User feedback system. e.g. www.geekpark.net 
+### Feedback system for GeekPark.
+[http://www.geekpark.net/rhea](http://www.geekpark.net/rhea "Feedback system for GeekPark")
