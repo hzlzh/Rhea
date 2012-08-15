@@ -61,7 +61,6 @@ a,a:active,a:visited{}
 .clearfix:after{clear:both;}
 .clearfix{zoom:1;}
 
-
 /* feedback button */
 .feedback-btn {
 z-index: 999;
@@ -69,8 +68,9 @@ display: block;
 left: 0;
 position: fixed;
 top: 100px;
+opacity: 0.8;
 }
-.feedback-btn a.zh-cn i{
+.feedback-btn a.zh-cn i {
 background: url("images/fbk-bg.png") repeat scroll 0 0 transparent;
 display: block;
 height: 18px;
@@ -82,7 +82,7 @@ width: 18px;
 -moz-transition: left 0.15s ease-in-out;
 transition: left 0.15s ease-in-out;
 }
-.feedback-btn a.zh-cn:hover i{
+.feedback-btn a.zh-cn:hover i {
 background-position: 0 -27px;
 }
 .feedback-btn a.zh-cn {
@@ -92,7 +92,6 @@ background-color: #f4f4f4;
 color: #bbb;
 display: inline-block;
 font-size: 12px;
-text-shadow: 1px 1px 0 #fff;
 font-weight: normal;
 letter-spacing: 32px;
 line-height: 12px;
@@ -109,7 +108,6 @@ text-decoration: none;
 margin-left: -4px;
 border: 1px solid #75a3d;
 color: #f4f4f4;
-text-shadow: 0 1px 3px #333;
 background-color: #6093cc; /* Old browsers */
 background: -moz-linear-gradient(left,  #6093cc 0%, #84b6eb 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, right top, color-stop(0%,#6093cc), color-stop(100%,#84b6eb)); /* Chrome,Safari4+ */
@@ -119,7 +117,9 @@ background: -ms-linear-gradient(left,  #6093cc 0%,#84b6eb 100%); /* IE10+ */
 background: linear-gradient(to right,  #6093cc 0%,#84b6eb 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6093cc', endColorstr='#84b6eb',GradientType=1 ); /* IE6-9 */
 }
-
+.feedback .feedback-btn {
+display: none;
+}
 
 
 /* feedback page */
@@ -133,6 +133,7 @@ background: -o-linear-gradient(top,  #f3f3f3 0%,#fefefe 100%);
 background: -ms-linear-gradient(top,  #f3f3f3 0%,#fefefe 100%);
 background: linear-gradient(to bottom,  #f3f3f3 0%,#fefefe 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#fefefe',GradientType=0 );
+font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti !important;
 }
 .feedback ul {
 list-style: none;
@@ -212,8 +213,8 @@ overflow: hidden;
 top: 14px;
 }
 .feedback .fbk-content .fbk-title .fbk-sort a {
-color: #007DBF;
-background-color: #EAEAEA;
+background-color: #F1F1F1;
+color: #999999;
 font-size: 12px;
 display: inline-block;
 float: left;
@@ -222,6 +223,7 @@ line-height: 12px;
 text-shadow: 1px 1px 0 #FAFAFA;
 }
 .feedback .fbk-content .fbk-title .fbk-sort a:hover,.feedback .fbk-content .fbk-title .fbk-sort a.checked {
+color: #007DBF;
 background-color: #e0e0e0;
 }
 .feedback .fbk-content .fbk-title .fbk-sort i {
@@ -264,8 +266,13 @@ margin: 0 5px 0 0;
 .feedback .fbk-content .fbk-list-body .fbk-list-item {
 margin-bottom: 35px;
 }
+
 .feedback .fbk-content .fbk-list-body .fbk-list-item .support-box {
+cursor: pointer;
 float: left;
+}
+.feedback .fbk-content .fbk-list-body .fbk-list-item .checked {
+cursor: default;
 }
 .feedback .fbk-content .fbk-list-body .fbk-list-item .support-box .support-num a {
 background: none repeat scroll 0 0 #FBEFB3;
@@ -292,6 +299,10 @@ text-align: center;
 text-shadow: 1px 1px 0 #F8F8F8;
 width: 40px;
 }
+.feedback .fbk-content .fbk-list-body .fbk-list-item .checked a {
+cursor: default;
+}
+
 .feedback .fbk-content .fbk-list-body .fbk-list-item .support-box a.support-text:hover {
 background-color: #e0e0e0;
 }
@@ -317,7 +328,7 @@ line-height: 20px;
 padding: 10px;
 margin-bottom: 10px;
 text-align: justify;
-text-shadow: 1px 1px 0 #DDDDDD;
+text-shadow: 0 1px 0 #DDDDDD;
 position: relative;
 background: #F0F0F0;
 background: -moz-linear-gradient(top,  #f9f9f9 0%, #ececec 100%);
@@ -329,8 +340,10 @@ background: linear-gradient(to bottom,  #f9f9f9 0%,#ececec 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ececec',GradientType=0 );
 }
 .feedback .fbk-content .fbk-list-body .fbk-list-area .fbk-list-content .more {
-text-decoration: underline;
 color: #007dbf;
+}
+.feedback .fbk-content .fbk-list-body .fbk-list-area .fbk-list-content .more-text {
+display: none;
 }
 .feedback .fbk-content .fbk-list-body .fbk-list-area .arrow-down {
 border-color: #DDDDDD transparent transparent;
@@ -355,7 +368,6 @@ width: 0;
 .feedback .fbk-content .fbk-list-body .fbk-list-area .fbk-list-author {
 margin-bottom: 20px;
 font-size: 12px;
-line-height: 12px;
 color: #999999;
 }
 .feedback .fbk-content .fbk-list-body .fbk-list-area .fbk-list-author .name {
@@ -472,6 +484,8 @@ margin-bottom: 16px;
 }
 .feedback .fbk-reply-box form.fbk-form textarea {
 width: 308px;
+max-width: 308px;
+min-width: 308px;
 height: 103px;
 margin-bottom: 20px;
 }
@@ -507,12 +521,16 @@ margin-right: 5px;
 }
 .feedback form.fbk-form label {
 overflow: hidden;
+display: block;
+color: #999;
 margin-bottom: 5px;
 }
+.feedback form.fbk-form label.checked {
+color: #646464;
+}
 .feedback form.fbk-form .message {
-display:none;
+display: none;
 background: none repeat scroll 0 0 #FFF5CA;
-border: 1px solid #F8E4A0;
 border-radius: 3px 3px 3px 3px;
 color: #666666;
 font-size: 12px;
@@ -538,4 +556,104 @@ color: #646464;
 }
 .feedback .fbk-reply-box a:hover {
 border-bottom: 1px solid #646464;
+}
+.feedback-single .fbk-reply-box {
+padding: 20px 15px 5px;
+border-radius: 5px 5px 5px 5px;
+height: auto;
+border-top: 1px solid #FFFFFF;
+width: auto;
+position: relative;
+}
+.feedback-single .title {
+background: url("images/fbk-bg.png") no-repeat scroll 10px -48px #FFFFFF;
+border-bottom: 1px solid #DDE0E9;
+padding-bottom: 6px;
+padding-left: 43px;
+padding-top: 19px;
+position: relative;
+}
+.feedback-single .title .title-l {
+font-size: 18px;
+line-height: 18px;
+}
+.feedback-single  .title a {
+bottom: 10px;
+color: #999999;
+font-size: 12px;
+position: absolute;
+right: 20px;
+}
+.feedback-single .title a:hover {
+border: none;
+}
+.feedback-single .fbk-reply-box form.fbk-form textarea {
+width: 418px;
+min-width: 418px;
+max-width: 418px;
+}
+.feedback-single .fbk-reply-box form.fbk-form input[type="text"] {
+width: 418px;
+}
+.feedback-single .fbk-reply-box form.fbk-form input[type="checkbox"] {
+left: 0;
+line-height: 29px;
+margin: 0;
+position: absolute;
+top: 8px;
+vertical-align: middle;
+}
+.feedback-single .fbk-reply-box form.fbk-form input[type="submit"] {
+margin-bottom: 0;
+margin-right: 0;
+margin-top: 0;
+position: absolute;
+right: 16px;
+top: 0;
+}
+.feedback-single  form.fbk-form label {
+line-height: 29px;
+color: #999999;
+display: block;
+margin-bottom: 5px;
+overflow: hidden;
+padding-left: 19px;
+position: relative;
+}
+.feedback-single form.fbk-form .message {
+left: 0;
+margin-bottom: 10px;
+margin-top: 0;
+right: 0;
+width: 407px;
+}
+.feedback-single .success-page {
+display: none;
+left: 0;
+margin-top: 20px;
+position: absolute;
+right: 0;
+width: 100%;
+}
+.feedback-single .success-page .tip-title {
+font-size: 23px;
+margin-bottom: 25px;
+text-align: center;
+}
+.feedback-single .success-page .tip-link {
+text-align: center;
+}
+.feedback-single .success-page .tip-link a {
+color: #007dbf;
+cursor: pointer;
+}
+.feedback-single .success-page .tip-link a:hover {
+color: #007dbf;
+border: none;
+}
+.feedback-single .fbk-reply-box form.fbk-form {
+position: absolute;
+}
+.fancybox-inner {
+border-radius: 4px 0 0 0
 }

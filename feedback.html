@@ -31,10 +31,10 @@
           <h1>用户反馈</h1>
           <div class="fbk-sort">
             <a data-option-id="0" class="checked" href="#latest">
-              最新反馈
+              按时间排序
             </a> <i>|</i>
             <a data-option-id="1" href="#supported">
-              热门反馈
+              按支持数排序
             </a>
           </div>
         </header>
@@ -42,7 +42,7 @@
           <ul>
             <li>
               <a class="checked" data-option-id="0" href="#all-list">
-                全部
+                全部反馈
               </a>
             </li>
             <li>
@@ -61,7 +61,7 @@
           
         </ul>
         <nav class="fbk-pagination">
-          <a data-option-id="0" href="#prev" class="pagination prev">
+          <a data-option-id="" href="#prev" class="pagination prev">
             <
           </a>
           <span class="pagination curent-page">1</span>
@@ -72,20 +72,20 @@
         </nav>
       </div>
       <div id="fbk-reply-box" class="fbk-reply-box">
-        <h2>发表反馈</h2>
+        <h2>我建议 ...</h2>
         <form class="fbk-form">
-          <textarea name="content" cols="30" rows="10" placeholder="请输入您的反馈。" ></textarea>
-          <input type="text" name="url" autocomplete="off" placeholder="出错页面链接">      
-          <input type="text" name="email" autocomplete="off" placeholder="邮箱">      
-          <input type="text" name="name" autocomplete="off" placeholder="姓名（选填）">      
-          <input type="text" name="mobile" autocomplete="off" placeholder="手机（选填）">      
+          <textarea name="content" cols="30" rows="10" placeholder="您的意见或建议 ..." ></textarea>
+          <input type="text" name="url" autocomplete="off" title="相关页面地址" placeholder="问题页面链接">      
+          <input type="text" name="email" value="" autocomplete="off" title="方便我们和您联系" placeholder="电子邮箱（必填）">      
+          <input type="text" name="name" value="" autocomplete="off" placeholder="姓名">      
+          <input type="text" name="mobile" autocomplete="off" placeholder="手机号码">      
           <label>
-            <input type="checkbox" name="is_agree">我愿意接受关于此反馈的进一步联系、回访</label>
+            <input type="checkbox" name="is_agree">我愿意接受回访</label>
           <input type="hidden" name="captcha" value="">   
           <div class="message"></div>   
-          <input type="submit" name="submit" value="发表反馈"></form>
+          <input type="submit" name="submit" value="提交反馈"></form>
         <div class="fbk-contact">
-          <h3>您可以通过如下方式联系管理员：</h3>
+          <h3>联系我们：</h3>
           <p>
             电话：010-85711956
             <br />      
